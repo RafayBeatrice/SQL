@@ -69,3 +69,9 @@ Where varsta < 25 AND nume LIKE 'c%'
 SELECT descriere
 FROM Produse
 WHERE Pret = any( select max(Pret) from Produse)
+
+## 12. Proiectaţi o interogare, ce ar afişa descrierea celui mai ieftin produs.
+
+SELECT descriere
+FROM Produse
+WHERE Pret = any ( select min(Pret) from Produse)
