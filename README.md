@@ -63,3 +63,9 @@ WHERE nume like '%a'
 SELECT nume, prenume, varsta
 FROM Angajati
 Where varsta < 25 AND nume LIKE 'c%'
+
+## 11. Proiectaţi o interogare, ce ar afişa descrierea celui mai scump produs.
+
+SELECT descriere
+FROM Produse
+WHERE Pret = any( select max(Pret) from Produse)
